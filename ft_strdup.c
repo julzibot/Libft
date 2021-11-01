@@ -6,7 +6,7 @@
 /*   By: jibot <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/23 14:58:08 by jibot             #+#    #+#             */
-/*   Updated: 2021/10/27 15:43:29 by jibot            ###   ########.fr       */
+/*   Updated: 2021/11/01 21:32:57 by jibot            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -16,10 +16,7 @@ char	*ft_strdup(const char *str)
 	int		i;
 	char	*cpy;
 
-	i = 0;
-	while (str[i])
-		i++;
-	cpy = malloc(i + 1);
+	cpy = malloc(ft_strlen(str) + 1);
 	i = 0;
 	while (str[i])
 	{

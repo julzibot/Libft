@@ -6,14 +6,14 @@
 /*   By: jibot <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/23 17:14:40 by jibot             #+#    #+#             */
-/*   Updated: 2021/10/25 18:37:13 by jibot            ###   ########.fr       */
+/*   Updated: 2021/11/01 22:08:37 by jibot            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (s[i])

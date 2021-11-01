@@ -6,7 +6,7 @@
 /*   By: jibot <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/31 16:14:15 by jibot             #+#    #+#             */
-/*   Updated: 2021/10/31 17:50:51 by jibot            ###   ########.fr       */
+/*   Updated: 2021/11/01 21:26:06 by jibot            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -14,27 +14,19 @@
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*flist;
-	t_list	**alst;
+	t_list	*temp;
 
-	(void) del;
-	alst = NULL;
-	if (!lst || ft_lstsize(lst) == 0)
+	flist = NULL;
+	if (!lst || ft_lstsize(lst) == 0 || !f || !del)
 		return (NULL);
-	flist = ft_lstnew(lst->content);
-	*alst = flist;
-	f(flist->content);
-	lst = lst->next;
-	while (lst->next)
+	while (lst != NULL)
 	{
-		flist->next = ft_lstnew(lst->content);
-		flist = flist->next;
-		f(flist->content);
-		lst = lst->next;
+		temp = ft_lstnew(f(lst->content));
+		ft_lstadd_back(&flist, temp);
+		if (lst->next)
+			lst = lst->next;
+		else
+			return (flist);
 	}
-	if (ft_lstsize(*alst) != 1)
-	{
-		flist->next = ft_lstnew(lst->content);
-		f(flist->next->content);
-	}
-	return (*alst);
+	return (flist);
 }

@@ -6,12 +6,12 @@
 /*   By: jibot <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/23 16:44:51 by jibot             #+#    #+#             */
-/*   Updated: 2021/10/27 19:05:22 by jibot            ###   ########.fr       */
+/*   Updated: 2021/11/01 22:04:38 by jibot            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-int abs(int n)
+int	abs(int n)
 {
 	if (n < 0)
 		return (-n);
@@ -19,9 +19,9 @@ int abs(int n)
 		return (n);
 }
 
-int get_power(int n)
+int	get_power(int n)
 {
-	int power;
+	int	power;
 
 	power = 0;
 	while (abs(n) >= 10)
@@ -32,12 +32,20 @@ int get_power(int n)
 	return (power);
 }
 
+int	ft_sign(int n)
+{
+	if (n < 0)
+		return (1);
+	else
+		return (0);
+}
+
 char	*ft_itoa(int n)
 {
-	int mod;
-	int power;
-	int sign;
-	char *nbr;
+	int		mod;
+	int		power;
+	int		sign;
+	char	*nbr;
 
 	if (n == -2147483648)
 	{
@@ -45,9 +53,7 @@ char	*ft_itoa(int n)
 		return (nbr);
 	}
 	power = get_power(n);
-	sign = 0;
-	if (n < 0)
-		sign++;
+	sign = ft_sign(n);
 	nbr = malloc(power + sign + 2);
 	nbr[power + sign + 1] = '\0';
 	while (power >= 0)

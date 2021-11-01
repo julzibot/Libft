@@ -6,16 +6,16 @@
 /*   By: jibot <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 17:34:51 by jibot             #+#    #+#             */
-/*   Updated: 2021/10/27 14:41:56 by jibot            ###   ########.fr       */
+/*   Updated: 2021/11/01 22:09:51 by jibot            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
 {
-	char cr;
-	char *str;
-	int i;
+	char	cr;
+	char	*str;
+	int		i;
 
 	cr = (char)c;
 	str = (char *)s;

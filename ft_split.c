@@ -6,15 +6,15 @@
 /*   By: jibot <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/23 17:18:53 by jibot             #+#    #+#             */
-/*   Updated: 2021/10/29 15:12:31 by jibot            ###   ########.fr       */
+/*   Updated: 2021/11/01 22:09:36 by jibot            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
 char	*strseg(const char *str, char c)
 {
-	int i;
-	char *tab;
+	int		i;
+	char	*tab;
 
 	i = 0;
 	while (str[i] && str[i] != c)
@@ -30,10 +30,10 @@ char	*strseg(const char *str, char c)
 	return (tab);
 }
 
-unsigned int size_count(const char *str, char c)
+unsigned int	size_count(const char *str, char c)
 {
-	unsigned int i;
-	unsigned int size;
+	unsigned int	i;
+	unsigned int	size;
 
 	i = 0;
 	size = 0;
@@ -58,9 +58,9 @@ unsigned int size_count(const char *str, char c)
 
 char	**ft_split(char const *s, char c)
 {
-	int i;
-	unsigned int n;
-	char **ftab;
+	int				i;
+	unsigned int	n;
+	char			**ftab;
 
 	if (s == NULL || !(*s))
 	{

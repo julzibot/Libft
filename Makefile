@@ -6,7 +6,7 @@
 #    By: jibot <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/19 19:19:15 by jibot             #+#    #+#              #
-#    Updated: 2021/10/31 16:45:35 by jibot            ###   ########.fr        #
+#    Updated: 2021/11/01 23:44:46 by jibot            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,24 +27,28 @@ B_OBJS	= ${B_SRCS:.c=.o}
 
 NAME	= libft.a
 
-CC	= gcc
+NAMEB	= bonus.a
 
-AR = ar rc
+CC		= gcc
 
-RM	= rm -f
+AR		= ar rc
+
+RM		= rm -f
 
 CFLAGS	= -Wall -Werror -Wextra
 
 all:		${NAME}
 
-bonus:		fclean ${B_OBJS}
-			${AR} ${NAME} ${B_OBJS}
-
+bonus:		${NAMEB}
+			
 .c.o:
 			${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
 ${NAME}:	${OBJS} 
 			${AR} ${NAME} ${OBJS}
+			
+${NAMEB}:	${B_OBJS}
+			${AR} ${NAME} ${B_OBJS}
 
 clean: 
 			${RM} ${OBJS} ${B_OBJS}
@@ -53,5 +57,7 @@ fclean:		clean
 			${RM} ${NAME}
 
 re:			fclean all
+
+bonus_re:	fclean bonus
 
 .PHONY:		all clean fclean re

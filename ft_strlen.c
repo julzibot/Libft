@@ -6,14 +6,14 @@
 /*   By: jibot <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/23 15:19:28 by jibot             #+#    #+#             */
-/*   Updated: 2021/10/25 18:39:22 by jibot            ###   ########.fr       */
+/*   Updated: 2021/11/01 22:11:39 by jibot            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-size_t	ft_strlen(char *str)
+size_t	ft_strlen(const char *str)
 {
-	int len;
+	int	len;
 
 	len = 0;
 	while (str[len])
