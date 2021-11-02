@@ -6,12 +6,12 @@
 /*   By: jibot <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/23 16:17:51 by jibot             #+#    #+#             */
-/*   Updated: 2021/11/01 22:16:45 by jibot            ###   ########.fr       */
+/*   Updated: 2021/11/02 11:56:59 by jibot            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-int	error_check(const char *str)
+static int	error_check(const char *str)
 {
 	int	i;
 

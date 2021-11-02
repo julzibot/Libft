@@ -6,12 +6,12 @@
 /*   By: jibot <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/23 19:34:52 by jibot             #+#    #+#             */
-/*   Updated: 2021/11/01 22:13:26 by jibot            ###   ########.fr       */
+/*   Updated: 2021/11/02 12:00:13 by jibot            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-int	is_set(char c, char const *set)
+static int	is_set(char c, char const *set)
 {
 	int	i;
 

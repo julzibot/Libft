@@ -6,12 +6,12 @@
 /*   By: jibot <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/23 17:18:53 by jibot             #+#    #+#             */
-/*   Updated: 2021/11/01 22:09:36 by jibot            ###   ########.fr       */
+/*   Updated: 2021/11/02 11:58:25 by jibot            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-char	*strseg(const char *str, char c)
+static char	*strseg(const char *str, char c)
 {
 	int		i;
 	char	*tab;
@@ -30,7 +30,7 @@ char	*strseg(const char *str, char c)
 	return (tab);
 }
 
-unsigned int	size_count(const char *str, char c)
+static unsigned int	size_count(const char *str, char c)
 {
 	unsigned int	i;
 	unsigned int	size;

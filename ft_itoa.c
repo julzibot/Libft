@@ -6,12 +6,12 @@
 /*   By: jibot <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/23 16:44:51 by jibot             #+#    #+#             */
-/*   Updated: 2021/11/01 22:04:38 by jibot            ###   ########.fr       */
+/*   Updated: 2021/11/02 11:56:41 by jibot            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-int	abs(int n)
+static int	abs(int n)
 {
 	if (n < 0)
 		return (-n);
@@ -19,7 +19,7 @@ int	abs(int n)
 		return (n);
 }
 
-int	get_power(int n)
+static int	get_power(int n)
 {
 	int	power;
 
@@ -32,7 +32,7 @@ int	get_power(int n)
 	return (power);
 }
 
-int	ft_sign(int n)
+static int	ft_sign(int n)
 {
 	if (n < 0)
 		return (1);
