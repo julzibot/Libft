@@ -6,7 +6,7 @@
 #    By: jibot <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/19 19:19:15 by jibot             #+#    #+#              #
-#    Updated: 2021/11/02 11:55:25 by jibot            ###   ########.fr        #
+#    Updated: 2021/11/02 20:44:44 by jibot            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,7 +40,7 @@ endif
 all:		${NAME}
 
 bonus:
-			make AVEC_BONUS=1 all
+			@make AVEC_BONUS=1 all
 			
 .c.o:
 			${CC} ${CFLAGS} -c $< -o ${<:.c=.o}

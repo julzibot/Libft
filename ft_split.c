@@ -6,7 +6,7 @@
 /*   By: jibot <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/23 17:18:53 by jibot             #+#    #+#             */
-/*   Updated: 2021/11/02 11:58:25 by jibot            ###   ########.fr       */
+/*   Updated: 2021/11/19 20:08:58 by jibot            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -19,7 +19,7 @@ static char	*strseg(const char *str, char c)
 	i = 0;
 	while (str[i] && str[i] != c)
 		i++;
-	tab = malloc(sizeof(char) * i);
+	tab = ft_calloc(i + 1, sizeof(char));
 	i = 0;
 	while (str[i] && str[i] != c)
 	{
@@ -62,7 +62,9 @@ char	**ft_split(char const *s, char c)
 	unsigned int	n;
 	char			**ftab;
 
-	if (s == NULL || !(*s))
+	if (!s)
+		return (NULL);
+	else if (s[0] == '\0' || (s[0] == '\0' && c == '\0'))
 	{
 		ftab = malloc(sizeof(char *));
 		ftab[0] = NULL;
@@ -70,13 +72,12 @@ char	**ft_split(char const *s, char c)
 	}
 	i = 0;
 	n = 0;
-	ftab = malloc(sizeof(char *) * (size_count(s, c) + 1));
+	ftab = ft_calloc(size_count(s, c) + 1, sizeof(char *));
 	while (n < size_count(s, c))
 	{
 		while (s[i] && s[i] == c)
 			i++;
-		ftab[n] = strseg(s + i, c);
-		n++;
+		ftab[n++] = strseg(s + i, c);
 		while (s[i] && s[i] != c)
 			i++;
 	}

@@ -6,12 +6,12 @@
 /*   By: jibot <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/23 16:44:51 by jibot             #+#    #+#             */
-/*   Updated: 2021/11/02 15:25:26 by jibot            ###   ########.fr       */
+/*   Updated: 2021/11/03 16:29:32 by jibot            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-static int	Vabs(int n)
+static int	vabs(int n)
 {
 	if (n < 0)
 		return (-n);
@@ -24,7 +24,7 @@ static int	get_power(int n)
 	int	power;
 
 	power = 0;
-	while (abs(n) >= 10)
+	while (vabs(n) >= 10)
 	{
 		n /= 10;
 		power++;
@@ -58,7 +58,7 @@ char	*ft_itoa(int n)
 	nbr[power + sign + 1] = '\0';
 	while (power >= 0)
 	{
-		mod = Vabs(n) % 10;
+		mod = vabs(n) % 10;
 		n /= 10;
 		nbr[power + sign] = mod + '0';
 		power--;
