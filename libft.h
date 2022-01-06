@@ -6,7 +6,7 @@
 /*   By: jibot <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 18:19:54 by jibot             #+#    #+#             */
-/*   Updated: 2021/11/01 22:43:08 by jibot            ###   ########.fr       */
+/*   Updated: 2021/12/08 19:25:29 by jibot            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBFT_H
@@ -14,8 +14,9 @@
 # include <stdio.h>
 # include <unistd.h>
 # include <stdlib.h>
+# include <stdarg.h>
 
-//_______________________STRUCTURES_______________________//
+//_________________________STRUCTURES_________________________//
 
 typedef struct s_list
 {
@@ -23,7 +24,7 @@ typedef struct s_list
 	struct s_list		*next;
 }	t_list;
 
-//_________________________PART 1_________________________//
+//___________________________PART 1___________________________//
 
 int		ft_atoi(const char *str);
 void	*ft_calloc(size_t count, size_t size);
@@ -49,7 +50,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
 
-//_________________________PART 2_________________________//
+//___________________________PART 2___________________________//
 
 char	*ft_itoa(int n);
 void	ft_putchar_fd(char c, int fd);
@@ -63,7 +64,7 @@ char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 
-//_________________________BONUS_________________________//
+//________________________LINKED_LISTS________________________//
 
 t_list	*ft_lstnew(void *content);
 void	ft_lstadd_front(t_list **alst, t_list *new);
@@ -75,5 +76,24 @@ void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
-//_________________________MATHS FUNCTIONS_________________________//
+//______________________MATHS FUNCTIONS______________________//
+
+int		is_prime(int nb);
+int		ft_next_prime(int nb);
+int		ft_sqrt(int nb);
+int		ft_pwr(int nb, int power);
+int		ft_fib(int index);
+int		ft_fac(int nb);
+
+//_________________________FT_PRINTF_________________________//
+
+int		ft_printf(const char *format, ...);
+int		ft_iputchar_fd(char c, int fd);
+int		ft_iputstr_fd(char *s, int fd);
+int		ft_iputnbr_fd(int n, int fd);
+int		ft_puthex(unsigned int n, char c);
+int		ft_iputnbru_fd(unsigned int n, int fd);
+int		ft_puthexp(unsigned long n, char c);
+
+//_______________________GET_NEXT_LINE_______________________//
 #endif
